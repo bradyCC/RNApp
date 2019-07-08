@@ -8,6 +8,7 @@ import {
   createBottomTabNavigator,
   createAppContainer
 } from "react-navigation";
+import Icon from "react-native-vector-icons/Ionicons";
 
 class HomeScreen extends Component {
   render() {
@@ -100,10 +101,42 @@ const StackNavigatorConfig = {
 const Home = createStackNavigator(HomeRouteConfigs, StackNavigatorConfig);
 const Center = createStackNavigator(CenterRouteConfigs, StackNavigatorConfig);
 
-const TabNavigator = createBottomTabNavigator({
-  Home: Home,
-  Center: Center
-});
+const TabRouteConfigs = {
+  Home: {
+    screen: Home,
+    navigationOptions: ({navigation}) => ({
+      tabBarLabel: "首页",
+      // tabBarIcon: ({ tintColor, focused }) => (
+      //   <Icon
+      //     name={focused ? "ios-home" : "ios-home-online"}
+      //     size={26}
+      //     style={{ color: tintColor }}
+      //   />
+      // )
+    })
+  },
+  Center: {
+    screen: Center,
+    navigationOptions: ({navigation}) => ({
+      tabBarLabel: "中心",
+      // tabBarIcon: ({ tintColor, focused }) => (
+      //   <Icon
+      //     name={focused ? "ios-home" : "ios-home-online"}
+      //     size={26}
+      //     style={{ color: tintColor }}
+      //   />
+      // )
+    })
+  }
+};
+
+const TabNavigatorConfig = {
+  tabBarOptions: {
+    showIcon: true
+  }
+};
+
+const TabNavigator = createBottomTabNavigator(TabRouteConfigs, TabNavigatorConfig);
 
 const styles = StyleSheet.create({
   container: {
