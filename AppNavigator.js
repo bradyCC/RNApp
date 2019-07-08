@@ -5,7 +5,6 @@ import React, { Component } from "react";
 import { StyleSheet, View, Text, Button } from "react-native";
 import { createStackNavigator, createBottomTabNavigator, createAppContainer } from "react-navigation";
 
-
 class HomeScreen extends Component {
   render() {
     return (
