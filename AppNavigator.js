@@ -3,14 +3,21 @@
  */
 import React, { Component } from "react";
 import { StyleSheet, View, Text, Button } from "react-native";
-import { createStackNavigator, createBottomTabNavigator, createAppContainer } from "react-navigation";
+import {
+  createStackNavigator,
+  createBottomTabNavigator,
+  createAppContainer
+} from "react-navigation";
 
 class HomeScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
         <Text>Home Screen</Text>
-        <Button title="Go to Page" onPress={() => this.props.navigation.navigate('Page')}></Button>
+        <Button
+          title="Go to Page"
+          onPress={() => this.props.navigation.navigate("Page")}
+        />
       </View>
     );
   }
@@ -29,7 +36,10 @@ class CenterScreen extends Component {
     return (
       <View style={styles.container}>
         <Text>Center Screen</Text>
-        <Button title="Go to Page" onPress={() => this.props.navigation.navigate('Page')}></Button>
+        <Button
+          title="Go to Page"
+          onPress={() => this.props.navigation.navigate("Page")}
+        />
       </View>
     );
   }
