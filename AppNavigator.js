@@ -77,7 +77,7 @@ class CenterPageScreen extends Component {
   }
 }
 
-
+// 设置路由
 const HomeRouteConfigs = {
   Home: {
     screen: HomeScreen,
@@ -89,9 +89,9 @@ const HomeRouteConfigs = {
   Page: {
     screen: HomePageScreen,
     navigationOptions: {
-      title: "首页 Page"
+      title: "首页 Page",
     }
-  }
+  },
 };
 const MessageRouteConfigs = {
   Message: {
@@ -121,6 +121,7 @@ const CenterRouteConfigs = {
     }
   }
 };
+// 全局配置
 const StackNavigatorConfig = {
   headerLayoutPreset: "center",
   defaultNavigationOptions: {
@@ -134,11 +135,27 @@ const StackNavigatorConfig = {
   },
   cardStyle: { backgroundColor: "#ccc" }
 };
-
 const Home = createStackNavigator(HomeRouteConfigs, StackNavigatorConfig);
 const Message = createStackNavigator(MessageRouteConfigs, StackNavigatorConfig);
 const Center = createStackNavigator(CenterRouteConfigs, StackNavigatorConfig);
 
+// 隐藏子路由 tabBar
+let setTabBar = StackNavigatorArr => {
+  StackNavigatorArr.map(item => {
+    item.navigationOptions = ({ navigation }) => {
+      let tabBarVisible = true;
+      if (navigation.state.index > 0) {
+        tabBarVisible = false;
+      }
+      return {
+        tabBarVisible,
+      };
+    }
+  });
+}
+setTabBar([Home, Message, Center]);
+
+// 设置tabBar
 const TabRouteConfigs = {
   Home: {
     screen: Home,
@@ -183,13 +200,11 @@ const TabRouteConfigs = {
     })
   }
 };
-
 const TabNavigatorConfig = {
   tabBarOptions: {
-    showIcon: true
+    showIcon: true,
   }
 };
-
 const TabNavigator = createBottomTabNavigator(TabRouteConfigs, TabNavigatorConfig);
 
 const styles = StyleSheet.create({
