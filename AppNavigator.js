@@ -89,9 +89,9 @@ const HomeRouteConfigs = {
   Page: {
     screen: HomePageScreen,
     navigationOptions: {
-      title: "首页 Page",
+      title: "首页 Page"
     }
-  },
+  }
 };
 const MessageRouteConfigs = {
   Message: {
@@ -148,18 +148,18 @@ let setTabBar = StackNavigatorArr => {
         tabBarVisible = false;
       }
       return {
-        tabBarVisible,
+        tabBarVisible
       };
-    }
+    };
   });
-}
+};
 setTabBar([Home, Message, Center]);
 
 // 设置tabBar
 const TabRouteConfigs = {
   Home: {
     screen: Home,
-    navigationOptions: ({navigation}) => ({
+    navigationOptions: ({ navigation }) => ({
       tabBarLabel: "首页",
       tabBarIcon: ({ tintColor, focused }) => (
         <Icon
@@ -173,7 +173,7 @@ const TabRouteConfigs = {
   },
   Message: {
     screen: Message,
-    navigationOptions: ({navigation}) => ({
+    navigationOptions: ({ navigation }) => ({
       tabBarLabel: "消息",
       tabBarIcon: ({ tintColor, focused }) => (
         <Icon
@@ -187,7 +187,7 @@ const TabRouteConfigs = {
   },
   Center: {
     screen: Center,
-    navigationOptions: ({navigation}) => ({
+    navigationOptions: ({ navigation }) => ({
       tabBarLabel: "中心",
       tabBarIcon: ({ tintColor, focused }) => (
         <Icon
@@ -202,10 +202,13 @@ const TabRouteConfigs = {
 };
 const TabNavigatorConfig = {
   tabBarOptions: {
-    showIcon: true,
+    showIcon: true
   }
 };
-const TabNavigator = createBottomTabNavigator(TabRouteConfigs, TabNavigatorConfig);
+const TabNavigator = createBottomTabNavigator(
+  TabRouteConfigs,
+  TabNavigatorConfig
+);
 
 const styles = StyleSheet.create({
   container: {
