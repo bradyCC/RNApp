@@ -1,14 +1,14 @@
 /**
  * @Author: brady
  * @Date: 2019/7/10
- * @Last Created time: 16:22:34
+ * @Last Created time: 16:21:30
  * @Description:
  */
 import React, { Component } from "react";
 import { StyleSheet, View, Text, Button } from "react-native";
 
 type Props = {};
-export default class CenterScreen extends Component<Props> {
+export default class Home extends Component<Props> {
   // 默认属性
   static defaultProps = {};
 
@@ -26,13 +26,13 @@ export default class CenterScreen extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text>CenterScreen</Text>
+        <Text>HomeScreen</Text>
         <Button
-          title="Go to CenterPageScreen"
-          onPress={() => this.props.navigation.navigate("Page")}
+          title="Go to HomePage"
+          onPress={() => this.props.navigation.navigate("HomePage", { content: "I come from Home" })}
         />
       </View>
-    )
+    );
   }
 }
 

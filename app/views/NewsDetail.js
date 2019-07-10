@@ -1,14 +1,14 @@
 /**
  * @Author: brady
  * @Date: 2019/7/10
- * @Last Created time: 16:22:43
+ * @Last Created time: 16:22:51
  * @Description:
  */
 import React, { Component } from "react";
 import { StyleSheet, View, Text } from "react-native";
 
 type Props = {};
-export default class HomePageScreen extends Component<Props> {
+export default class NewsDetail extends Component<Props> {
   // 默认属性
   static defaultProps = {};
 
@@ -24,13 +24,11 @@ export default class HomePageScreen extends Component<Props> {
 
   // 渲染
   render() {
-    const { params }= this.props.navigation.state;
     return (
       <View style={styles.container}>
-        <Text>HomePageScreen</Text>
-        <Text>{ params.content }</Text>
+        <Text>NewsDetail</Text>
       </View>
-    )
+    );
   }
 }
 

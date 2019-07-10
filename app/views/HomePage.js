@@ -1,14 +1,14 @@
 /**
  * @Author: brady
  * @Date: 2019/7/10
- * @Last Created time: 16:21:48
+ * @Last Created time: 16:22:43
  * @Description:
  */
 import React, { Component } from "react";
-import { StyleSheet, View, Text, Button } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 
 type Props = {};
-export default class MessageScreen extends Component<Props> {
+export default class HomePageScreen extends Component<Props> {
   // 默认属性
   static defaultProps = {};
 
@@ -24,15 +24,13 @@ export default class MessageScreen extends Component<Props> {
 
   // 渲染
   render() {
+    const { params }= this.props.navigation.state;
     return (
       <View style={styles.container}>
-        <Text>MessageScreen</Text>
-        <Button
-          title="Go to MessagePageScreen"
-          onPress={() => this.props.navigation.navigate("Page")}
-        />
+        <Text>HomePage</Text>
+        <Text>{params.content}</Text>
       </View>
-    )
+    );
   }
 }
 

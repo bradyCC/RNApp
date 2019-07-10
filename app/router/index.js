@@ -12,54 +12,54 @@ import {
 } from "react-navigation";
 import Icon from "react-native-vector-icons/Ionicons";
 
-import HomeScreen  from "../views/HomeScreen";
-import MessageScreen  from "../views/MessageScreen";
-import CenterScreen  from "../views/CenterScreen";
-import HomePageScreen from "../views/HomePageScreen";
-import MessagePageScreen from "../views/MessagePageScreen";
-import CenterPageScreen from "../views/CenterPageScreen";
+import Home from "../views/Home";
+import News from "../views/News";
+import Personal from "../views/Personal";
+import HomePage from "../views/HomePage";
+import NewsDetail from "../views/NewsDetail";
+import PersonalInfo from "../views/PersonalInfo";
 
 // 设置路由
 const HomeRouteConfigs = {
   Home: {
-    screen: HomeScreen,
+    screen: Home,
     navigationOptions: {
       // header: null,
       title: "首页"
     }
   },
-  Page: {
-    screen: HomePageScreen,
+  HomePage: {
+    screen: HomePage,
     navigationOptions: {
-      title: "首页 Page"
+      title: "首页信息"
     }
   }
 };
-const MessageRouteConfigs = {
-  Message: {
-    screen: MessageScreen,
+const NewsRouteConfigs = {
+  News: {
+    screen: News,
     navigationOptions: {
-      title: "消息"
+      title: "新闻"
     }
   },
-  Page: {
-    screen: MessagePageScreen,
+  NewsDetail: {
+    screen: NewsDetail,
     navigationOptions: {
-      title: "消息 Page"
+      title: "新闻详情"
     }
   }
 };
-const CenterRouteConfigs = {
-  Center: {
-    screen: CenterScreen,
+const PersonalRouteConfigs = {
+  Personal: {
+    screen: Personal,
     navigationOptions: {
-      title: "中心"
+      title: "个人中心"
     }
   },
-  Page: {
-    screen: CenterPageScreen,
+  PersonalInfo: {
+    screen: PersonalInfo,
     navigationOptions: {
-      title: "中心 Page"
+      title: "我的资料"
     }
   }
 };
@@ -73,13 +73,14 @@ const StackNavigatorConfig = {
     headerTitleStyle: {
       color: "#fff"
     },
-    headerTintColor: "#fff"
+    headerTintColor: "#fff",
+    headerBackTitle: null
   },
   cardStyle: { backgroundColor: "#ccc" }
 };
-const Home = createStackNavigator(HomeRouteConfigs, StackNavigatorConfig);
-const Message = createStackNavigator(MessageRouteConfigs, StackNavigatorConfig);
-const Center = createStackNavigator(CenterRouteConfigs, StackNavigatorConfig);
+const HomeTab = createStackNavigator(HomeRouteConfigs, StackNavigatorConfig);
+const NewsTab = createStackNavigator(NewsRouteConfigs, StackNavigatorConfig);
+const PersonalTab = createStackNavigator(PersonalRouteConfigs, StackNavigatorConfig);
 
 // 隐藏子路由 tabBar
 let setTabBar = StackNavigatorArr => {
@@ -95,12 +96,12 @@ let setTabBar = StackNavigatorArr => {
     };
   });
 };
-setTabBar([Home, Message, Center]);
+setTabBar([Home, News, Personal]);
 
 // 设置tabBar
 const TabRouteConfigs = {
   Home: {
-    screen: Home,
+    screen: HomeTab,
     navigationOptions: ({ navigation }) => ({
       tabBarLabel: "首页",
       tabBarIcon: ({ tintColor, focused }) => (
@@ -113,24 +114,24 @@ const TabRouteConfigs = {
       )
     })
   },
-  Message: {
-    screen: Message,
+  News: {
+    screen: NewsTab,
     navigationOptions: ({ navigation }) => ({
-      tabBarLabel: "消息",
+      tabBarLabel: "新闻",
       tabBarIcon: ({ tintColor, focused }) => (
         <Icon
-          // name={focused ? "ios-text" : "ios-text"}
-          name="ios-text"
+          // name={focused ? "ios-paper" : "ios-paper"}
+          name="ios-paper"
           size={26}
           style={{ color: tintColor }}
         />
       )
     })
   },
-  Center: {
-    screen: Center,
+  Personal: {
+    screen: PersonalTab,
     navigationOptions: ({ navigation }) => ({
-      tabBarLabel: "中心",
+      tabBarLabel: "个人中心",
       tabBarIcon: ({ tintColor, focused }) => (
         <Icon
           // name={focused ? "ios-contact" : "ios-contact"}

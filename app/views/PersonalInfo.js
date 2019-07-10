@@ -4,11 +4,11 @@
  * @Last Created time: 16:23:03
  * @Description:
  */
-import React, {Component} from "react";
-import {StyleSheet, View, Text} from "react-native";
+import React, { Component } from "react";
+import { StyleSheet, View, Text } from "react-native";
 
 type Props = {};
-export default class CenterPageScreen extends Component<Props> {
+export default class PersonalInfo extends Component<Props> {
   // 默认属性
   static defaultProps = {};
 
@@ -26,11 +26,9 @@ export default class CenterPageScreen extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text>
-          CenterPageScreen
-        </Text>
+        <Text>PersonalInfo</Text>
       </View>
-    )
+    );
   }
 }
 
