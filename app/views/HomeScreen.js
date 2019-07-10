@@ -6,6 +6,7 @@
  */
 import React, { Component } from "react";
 import { StyleSheet, View, Text, Button } from "react-native";
+import MySwiper from "../components/MySwiper";
 
 type Props = {};
 export default class HomeScreen extends Component<Props> {
@@ -32,7 +33,7 @@ export default class HomeScreen extends Component<Props> {
           onPress={() => this.props.navigation.navigate("Page", { content: "I come from HomeScreen" })}
         />
       </View>
-    )
+    );
   }
 }
 
