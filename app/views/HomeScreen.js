@@ -29,7 +29,7 @@ export default class HomeScreen extends Component<Props> {
         <Text>HomeScreen</Text>
         <Button
           title="Go to HomePageScreen"
-          onPress={() => this.props.navigation.navigate("Page")}
+          onPress={() => this.props.navigation.navigate("Page", { content: "I come from HomeScreen" })}
         />
       </View>
     )

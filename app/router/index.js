@@ -4,6 +4,7 @@
  * @Last Created time: 16:19:30
  * @Description:
  */
+import React from "react";
 import {
   createStackNavigator,
   createBottomTabNavigator,
