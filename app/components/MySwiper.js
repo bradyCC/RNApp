@@ -1,6 +1,6 @@
 /**
  * @Author: brady
- * @Date: 2019-07-10
+ * @Date: 2019/7/10
  * @Last Created time: 20:52:40
  * @Description:
  */
@@ -51,7 +51,7 @@ export default class MySwiper extends Component<Props> {
 
 const styles = StyleSheet.create({
   container: {
-    height: 400
+    // height: 400
   },
   wrapper: {},
   slide1: {

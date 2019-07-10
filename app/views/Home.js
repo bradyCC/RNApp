@@ -5,7 +5,8 @@
  * @Description:
  */
 import React, { Component } from "react";
-import { StyleSheet, View, Text, Button } from "react-native";
+import { StyleSheet, View } from "react-native";
+import MySwiper from "../components/MySwiper";
 
 type Props = {};
 export default class Home extends Component<Props> {
@@ -26,11 +27,7 @@ export default class Home extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text>HomeScreen</Text>
-        <Button
-          title="Go to HomePage"
-          onPress={() => this.props.navigation.navigate("HomePage", { content: "I come from Home" })}
-        />
+        <MySwiper />
       </View>
     );
   }
