@@ -5,11 +5,10 @@
  * @format
  * @flow
  */
-
 import React, { Fragment } from "react";
-import { SafeAreaView, Platform, StyleSheet, View, Text } from "react-native";
+import { SafeAreaView, Platform, View } from "react-native";
 import { Button } from "@ant-design/react-native"; // 集成ant-mobile-rn, 按需引入
-import AppNavigator from "./AppNavigator";
+import AppNavigator from "./app/router/index";
 
 const Navigator = Platform.select({
   ios: () => (
@@ -27,14 +26,5 @@ const Navigator = Platform.select({
 const App = () => {
   return <Fragment>{Navigator}</Fragment>;
 };
-
-const styles = StyleSheet.create({
-  contaienr: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#fff"
-  }
-});
 
 export default App;
