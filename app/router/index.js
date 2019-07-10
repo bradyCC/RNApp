@@ -96,7 +96,7 @@ let setTabBar = StackNavigatorArr => {
     };
   });
 };
-setTabBar([Home, News, Personal]);
+setTabBar([HomeTab, NewsTab, PersonalTab]);
 
 // 设置tabBar
 const TabRouteConfigs = {
