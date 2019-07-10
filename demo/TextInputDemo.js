@@ -24,7 +24,9 @@ export default class TextInputDemo extends Component<Props> {
     return (
       <View style={styles.container}>
         {/* TextInput 输入框组件用法 */}
-        <TextInput placeholder="请输入手机号" onChangeText={ (phone) => this.setState({ phone }) } />
+        {/* 1. editable 用于设置是否禁用 */}
+        {/* 2. keyboardType 用于设置弹出小键盘类型 */}
+        <TextInput placeholder="请输入手机号" keyboardType="numeric" onChangeText={ (phone) => this.setState({ phone }) } />
         <Button title="点我!" onPress={ () => Alert.alert('你点击了按钮!')} color=""></Button>
       </View>
     );
