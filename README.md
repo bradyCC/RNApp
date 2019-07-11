@@ -56,4 +56,4 @@ yarn add jetifier --dev （react-native 0.60.0 暂不兼容 react-native-gesture
 
 ## 使用react-native-vector-icons 字体图标
 
-## 使用react-native-swipter 实现轮播图
+## 使用react-native-swiper 实现轮播图
