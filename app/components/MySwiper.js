@@ -32,16 +32,19 @@ export default class MySwiper extends Component<Props> {
           showsButtons={false}
           autoplay={true}
           removeClippedSubviews={false}
-          autoplayTimeout={5}
+          autoplayTimeout={2.5}
         >
-          <View style={styles.slide1}>
+          <View style={[styles.slide, styles.slide1]}>
             <Text style={styles.text}>Hello Swiper</Text>
           </View>
-          <View style={styles.slide2}>
+          <View style={[styles.slide, styles.slide2]}>
             <Text style={styles.text}>Beautiful</Text>
           </View>
-          <View style={styles.slide3}>
+          <View style={[styles.slide, styles.slide3]}>
             <Text style={styles.text}>And simple</Text>
+          </View>
+          <View style={[styles.slide, styles.slide3]}>
+            <Text style={styles.text}>And simple2</Text>
           </View>
         </Swiper>
       </View>
@@ -54,22 +57,18 @@ const styles = StyleSheet.create({
     // height: 400
   },
   wrapper: {},
-  slide1: {
+  slide: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+  },
+  slide1: {
     backgroundColor: "#9DD6EB"
   },
   slide2: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
     backgroundColor: "#97CAE5"
   },
   slide3: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
     backgroundColor: "#92BBD9"
   },
   text: {
