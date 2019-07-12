@@ -10,6 +10,7 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
+        SplashScreen.show(this);  // 添加这一句
         return "RNApp";
     }
 }

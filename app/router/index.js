@@ -47,7 +47,7 @@ const NewsRouteConfigs = {
     navigationOptions: ({ navigation }) => ({
       title: `${navigation.state.params.title}`
     })
-  }
+  },
 };
 const PersonalRouteConfigs = {
   Personal: {
@@ -68,6 +68,7 @@ const StackNavigatorConfig = {
   headerLayoutPreset: "center",
   defaultNavigationOptions: {
     headerStyle: {
+      gesturesEnabled: false,
       backgroundColor: "rgb(16, 142, 233)"
     },
     headerTitleStyle: {
@@ -147,7 +148,7 @@ const TabNavigatorConfig = {
   initialRouteName: "Home",
   tabBarOptions: {
     showIcon: true
-  }
+  },
 };
 const TabNavigator = createBottomTabNavigator(
   TabRouteConfigs,
