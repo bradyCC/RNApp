@@ -144,6 +144,7 @@ const TabRouteConfigs = {
   }
 };
 const TabNavigatorConfig = {
+  initialRouteName: "Home",
   tabBarOptions: {
     showIcon: true
   }

@@ -35,6 +35,11 @@ export default class FlatListDemo extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
+        {/* 1. horizontal={true} 设置水平布局 */}
+        {/* 2. showsHorizontalScrollIndicator 设置是否显示水平滚动条 */}
+        {/* 3. keyExtractor={(item, index) => index} 设置key */}
+        {/* 4. data 数据列表 */}
+        {/* 5. renderItem 渲染组件 */}
         <FlatList data={this.state.data} renderItem={({item}) => <Text key={item.id} style={{backgroundColor: item.color, width: 480, height: 200}}>{item.content}</Text>}></FlatList>
       </View>
     );
