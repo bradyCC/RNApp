@@ -44,9 +44,9 @@ const NewsRouteConfigs = {
   },
   NewsDetail: {
     screen: NewsDetail,
-    navigationOptions: {
-      title: "新闻详情"
-    }
+    navigationOptions: ({ navigation }) => ({
+      title: `${navigation.state.params.title}`
+    })
   }
 };
 const PersonalRouteConfigs = {

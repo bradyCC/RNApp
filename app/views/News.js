@@ -5,7 +5,7 @@
  * @Description:
  */
 import React, { Component } from "react";
-import {StyleSheet, ScrollView, View, Text, Image, TouchableHighlight } from "react-native";
+import {StyleSheet, ScrollView, View, Text, Image, TouchableOpacity, TouchableHighlight } from "react-native";
 
 type Props = {};
 export default class News extends Component<Props> {
@@ -38,8 +38,8 @@ export default class News extends Component<Props> {
     };
   }
 
-  onPress = title => {
-    this.props.navigation.navigate("NewsDetail", { title: title})
+  onPress = (id, title) => {
+    this.props.navigation.navigate("NewsDetail", { id: id, title: title})
   }
 
   // 渲染
@@ -50,12 +50,16 @@ export default class News extends Component<Props> {
           {
             this.state.newsList.map(item => {
               return (
-                <TouchableHighlight activeOpacity={0.85} underlayColor="#ebedee" key={item.id} onPress={ () => this.onPress(item.title) }>
+                // 触摸组件用法
+                // 1. TouchableOpacity: <TouchableOpacity activeOpacity={0.85} key={item.id} onPress={ () => this.onPress(item.title) }>
+                // 2. TouchableHighlight: <TouchableOpacity activeOpacity={0.85} underlayColor="#ebedee" key={item.id} onPress={ () => this.onPress(item.title) }></TouchableOpacity>
+                // 备注： activeOpacity用于设置透明度 underlayColor用于设置底色
+                <TouchableOpacity activeOpacity={0.85} key={item.id} onPress={ () => this.onPress(item.id, item.title) }>
                   <View style={styles.view}>
                     <Image source={{ uri: item.url }} style={styles.image} />
                     <Text style={styles.title}>{item.title}</Text>
                   </View>
-                </TouchableHighlight>
+                </TouchableOpacity>
               )
             })
           }

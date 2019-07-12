@@ -27,8 +27,8 @@ export default class NewsDetail extends Component<Props> {
     const { params } = this.props.navigation.state
     return (
       <View style={styles.container}>
-        <Text>NewsDetail</Text>
-        <Text>{params.title}</Text>
+        <Text>新闻ID：{params.id}</Text>
+        <Text>新闻标题：{params.title}</Text>
       </View>
     );
   }
