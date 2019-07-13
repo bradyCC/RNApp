@@ -59,3 +59,5 @@ yarn add jetifier --dev （react-native 0.60.0 暂不兼容 react-native-gesture
 ## 使用react-native-swiper 实现轮播图
 
 ## 使用react-native-splash-screen 实现启动页
+
+## 使用react-native-image-crop-picker 图像选择器

@@ -11,6 +11,7 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
+  - QBImagePickerController (3.4.0)
   - React (0.60.0):
     - React-Core (= 0.60.0)
     - React-DevSupport (= 0.60.0)
@@ -59,8 +60,6 @@ PODS:
   - React-jsinspector (0.60.0)
   - react-native-splash-screen (3.2.0):
     - React
-  - react-native-webview (5.12.1):
-    - React
   - React-RCTActionSheet (0.60.0):
     - React-Core (= 0.60.0)
   - React-RCTAnimation (0.60.0):
@@ -87,8 +86,14 @@ PODS:
     - React-fishhook (= 0.60.0)
   - RNGestureHandler (1.3.0):
     - React
+  - RNImageCropPicker (0.25.0):
+    - QBImagePickerController
+    - React-Core
+    - React-RCTImage
+    - RSKImageCropper
   - RNVectorIcons (6.6.0):
     - React
+  - RSKImageCropper (2.2.2)
   - yoga (0.60.0.React)
 
 DEPENDENCIES:
@@ -104,7 +109,6 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - react-native-splash-screen (from `../node_modules/react-native-splash-screen`)
-  - react-native-webview (from `/Users/brady/Documents/GitHub/RNApp/node_modules/react-native-webview`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
   - React-RCTBlob (from `../node_modules/react-native/Libraries/Blob`)
@@ -116,12 +120,15 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-RCTWebSocket (from `../node_modules/react-native/Libraries/WebSocket`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
+  - RNImageCropPicker (from `/Users/brady/Documents/GitHub/RNApp/node_modules/react-native-image-crop-picker`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - boost-for-react-native
+    - QBImagePickerController
+    - RSKImageCropper
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -148,8 +155,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   react-native-splash-screen:
     :path: "../node_modules/react-native-splash-screen"
-  react-native-webview:
-    :path: "/Users/brady/Documents/GitHub/RNApp/node_modules/react-native-webview"
   React-RCTActionSheet:
     :path: "../node_modules/react-native/Libraries/ActionSheetIOS"
   React-RCTAnimation:
@@ -172,6 +177,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/Libraries/WebSocket"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
+  RNImageCropPicker:
+    :path: "/Users/brady/Documents/GitHub/RNApp/node_modules/react-native-image-crop-picker"
   RNVectorIcons:
     :path: "../node_modules/react-native-vector-icons"
   yoga:
@@ -182,6 +189,7 @@ SPEC CHECKSUMS:
   DoubleConversion: 5805e889d232975c086db112ece9ed034df7a0b2
   Folly: 30e7936e1c45c08d884aa59369ed951a8e68cf51
   glog: 1f3da668190260b06b429bb211bfbee5cd790c28
+  QBImagePickerController: d54cf93db6decf26baf6ed3472f336ef35cae022
   React: 4b3c068e793e96672dcd186a2b572fac43e4b031
   React-Core: 3dc86b22920597f813c62a96db3165950b64826b
   React-cxxreact: 0dacb291e59b81e7c3f22a2118bee853ba8a60d2
@@ -191,7 +199,6 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 7a3554f703a58963ec80b860144ea0f0e9b910e1
   React-jsinspector: d4ed52225912efe0019bb7f1a225aec20f23049a
   react-native-splash-screen: 200d11d188e2e78cea3ad319964f6142b6384865
-  react-native-webview: 5036ed4a973ad1deeeff118262d2df7b60b3419d
   React-RCTActionSheet: b27ff3cf3a68f917c46d2b94abf938b625b96570
   React-RCTAnimation: 9e4708e5bd65fca8285ce7c0aa076f3f4fa5c2f8
   React-RCTBlob: 6eafcc3a24f33785692a7be24918ade607bc8719
@@ -203,7 +210,9 @@ SPEC CHECKSUMS:
   React-RCTVibration: 4ee1cf208ab17a50fafb1c16ffe28fe594a64e4f
   React-RCTWebSocket: fca087d583724aa0e5fef7d911f0f2a28d0f2736
   RNGestureHandler: 5329a942fce3d41c68b84c2c2276ce06a696d8b0
+  RNImageCropPicker: 0a731d984e64ee4c28bddaa7ce52262e4b80979f
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
+  RSKImageCropper: 05e3b82a18da83ea3c2b7bffa7f2199a621d6802
   yoga: 616fde658be980aa60a2158835170f3f9c2d04b4
 
 PODFILE CHECKSUM: 2ced510a988edd180ab3409d4509fda06ab5c475
