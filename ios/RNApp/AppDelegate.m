@@ -6,6 +6,7 @@
  */
 
 #import "AppDelegate.h"
+#import "RNSplashScreen.h"  // 添加这一句
 
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
@@ -27,6 +28,7 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  [RNSplashScreen show];  // 添加这一句，这一句一定要在最后
   return YES;
 }
 
