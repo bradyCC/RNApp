@@ -120,7 +120,7 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-RCTWebSocket (from `../node_modules/react-native/Libraries/WebSocket`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
-  - RNImageCropPicker (from `/Users/brady/Documents/GitHub/RNApp/node_modules/react-native-image-crop-picker`)
+  - RNImageCropPicker (from `../node_modules/react-native-image-crop-picker`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -178,7 +178,7 @@ EXTERNAL SOURCES:
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
   RNImageCropPicker:
-    :path: "/Users/brady/Documents/GitHub/RNApp/node_modules/react-native-image-crop-picker"
+    :path: "../node_modules/react-native-image-crop-picker"
   RNVectorIcons:
     :path: "../node_modules/react-native-vector-icons"
   yoga:
@@ -215,6 +215,6 @@ SPEC CHECKSUMS:
   RSKImageCropper: 05e3b82a18da83ea3c2b7bffa7f2199a621d6802
   yoga: 616fde658be980aa60a2158835170f3f9c2d04b4
 
-PODFILE CHECKSUM: 2ced510a988edd180ab3409d4509fda06ab5c475
+PODFILE CHECKSUM: ba1062565db0a6e1b9de95cb99fb913ec45168e1
 
 COCOAPODS: 1.7.3

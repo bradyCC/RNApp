@@ -32,9 +32,9 @@ target 'RNApp' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
-
-
   pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
+
+  pod 'RNImageCropPicker', :path => '../node_modules/react-native-image-crop-picker'
 
   target 'RNAppTests' do
     inherit! :search_paths

@@ -6,6 +6,7 @@
  */
 import React, { Component } from "react";
 import { StyleSheet, View, Text, Button } from "react-native";
+import MyImagePicker from "../components/MyImagePicker";
 
 type Props = {};
 export default class Personal extends Component<Props> {
@@ -31,6 +32,7 @@ export default class Personal extends Component<Props> {
           title="Go to PersonalInfo"
           onPress={() => this.props.navigation.navigate("PersonalInfo")}
         />
+        <MyImagePicker />
       </View>
     );
   }
