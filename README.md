@@ -20,7 +20,7 @@
 
 ## 配置模拟器
 1. android模拟器
-+ MUMU模拟器：adb connect 127.0.0.1:7555
++ MUMU模拟器：adb connect 127.0.0.1:7555 (windows系统 7555、macOS系统 5555)
 + 夜神玩模拟器：adb connect 127.0.0.1:62001
 + 逍遥安卓模拟器：adb connect 127.0.0.1:21503
 + 海马玩模拟器：adb connect 127.0.0.1:26944
