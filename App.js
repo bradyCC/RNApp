@@ -5,10 +5,11 @@
  * @format
  * @flow
  */
-import React, { Fragment } from "react";
+import React, { Fragment, Component } from "react";
 import { SafeAreaView, Platform, View } from "react-native";
 import { Button } from "@ant-design/react-native"; // 集成ant-mobile-rn, 按需引入
 import AppNavigator from "./app/router/index";
+import SplashScreen from "react-native-splash-screen";
 
 const Navigator = Platform.select({
   ios: () => (
@@ -23,8 +24,12 @@ const Navigator = Platform.select({
   )
 })();
 
-const App = () => {
-  return <Fragment>{Navigator}</Fragment>;
-};
+export default class App extends Component {
+  render() {
+    return <Fragment>{Navigator}</Fragment>;
+  }
 
-export default App;
+  componentDidMount() {
+    SplashScreen.hide();
+  }
+}

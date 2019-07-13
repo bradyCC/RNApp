@@ -47,7 +47,7 @@ const NewsRouteConfigs = {
     navigationOptions: ({ navigation }) => ({
       title: `${navigation.state.params.title}`
     })
-  },
+  }
 };
 const PersonalRouteConfigs = {
   Personal: {
@@ -148,7 +148,7 @@ const TabNavigatorConfig = {
   initialRouteName: "Home",
   tabBarOptions: {
     showIcon: true
-  },
+  }
 };
 const TabNavigator = createBottomTabNavigator(
   TabRouteConfigs,
