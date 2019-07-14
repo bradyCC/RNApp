@@ -5,7 +5,7 @@
  * @Description:
  */
 import React, { Component } from "react";
-import { StyleSheet, View, Button, Alert } from "react-native";
+import { StyleSheet, View, Text, Button, Image, Alert } from "react-native";
 import ImagePicker from "react-native-image-crop-picker";
 
 type Props = {};
@@ -20,7 +20,9 @@ export default class MyImagePicker extends Component<Props> {
   constructor(props) {
     super(props);
     // 初始状态
-    this.state = {};
+    this.state = {
+      image: ``
+    };
   }
 
   // 打开相机
@@ -46,6 +48,9 @@ export default class MyImagePicker extends Component<Props> {
       cropping: true
     })
       .then(image => {
+        this.setState({
+          image: image.sourceURL
+        });
         console.log(image);
       })
       .catch(err => {
@@ -55,12 +60,25 @@ export default class MyImagePicker extends Component<Props> {
 
   // 渲染
   render() {
+    let image;
+    if (this.state.image) {
+      image = (
+        <View style={styles.imageView}>
+          <Image source={{ uri: this.state.image }} style={styles.image} />
+        </View>
+      );
+    } else {
+      image = (
+        <Text style={styles.text}>请选择图片</Text>
+      )
+    }
     return (
       <View style={styles.contianer}>
         <Button
           title="select from camera"
           onPress={ () => this.selectFromCamera() }
         />
+        {image}
         <Button
           title="select from galley"
           onPress={ () => this.selectFromGalley() }
@@ -76,5 +94,16 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "#ccc"
+  },
+  text: {
+    textAlign: "center"
+  },
+  imageView: {
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  image: {
+    width: 100,
+    height: 100
   }
 });
