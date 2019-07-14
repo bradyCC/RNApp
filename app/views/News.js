@@ -5,7 +5,7 @@
  * @Description:
  */
 import React, { Component } from "react";
-import { StyleSheet, ScrollView, View, Text, Image, TouchableOpacity, TouchableHighlight } from "react-native";
+import { Platform, StyleSheet, ScrollView, View, Text, Image, TouchableOpacity, TouchableHighlight } from "react-native";
 
 type Props = {};
 export default class News extends Component<Props> {
@@ -85,10 +85,24 @@ const styles = StyleSheet.create({
   },
   view: {
     marginTop: 20,
-    width: 150
+    ...Platform.select({
+      ios: {
+        width: 150
+      },
+      android: {
+        width: 200
+      }
+    })
   },
   image: {
-    width: 150,
+    ...Platform.select({
+      ios: {
+        width: 150
+      },
+      android: {
+        width: 200
+      }
+    }),
     height: 100
   },
   title: {
