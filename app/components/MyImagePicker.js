@@ -5,7 +5,7 @@
  * @Description:
  */
 import React, { Component } from "react";
-import { StyleSheet, View, Text, Button, Image, Alert } from "react-native";
+import { StyleSheet, View, Text, Button, Image } from "react-native";
 import ImagePicker from "react-native-image-crop-picker";
 
 type Props = {};
@@ -30,13 +30,15 @@ export default class MyImagePicker extends Component<Props> {
     ImagePicker.openCamera({
       width: 300,
       height: 400,
-      cropping: true
+      cropping: true,
+      mediaType: "video",
+      useFrontCamera: true
     })
       .then(image => {
         console.log(image);
       })
       .catch(err => {
-        Alert.alert(err);
+        console.log(err);
       });
   };
 
@@ -54,7 +56,7 @@ export default class MyImagePicker extends Component<Props> {
         console.log(image);
       })
       .catch(err => {
-        Alert.alert(err);
+        console.log(err);
       });
   };
 
