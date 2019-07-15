@@ -14,9 +14,11 @@ import Icon from "react-native-vector-icons/Ionicons";
 
 import Home from "../views/Home";
 import News from "../views/News";
+import Order from "../views/Order";
 import Personal from "../views/Personal";
 import HomePage from "../views/HomePage";
 import NewsDetail from "../views/NewsDetail";
+import OrderDetail from "../views/OrderDetail";
 import PersonalInfo from "../views/PersonalInfo";
 
 // 设置路由
@@ -44,6 +46,20 @@ const NewsRouteConfigs = {
   },
   NewsDetail: {
     screen: NewsDetail,
+    navigationOptions: ({ navigation }) => ({
+      title: `${navigation.state.params.title}`
+    })
+  }
+};
+const OrderRouteConfigs = {
+  Order: {
+    screen: Order,
+    navigationOptions: {
+      title: "订单"
+    }
+  },
+  OrderDetail: {
+    screen: OrderDetail,
     navigationOptions: ({ navigation }) => ({
       title: `${navigation.state.params.title}`
     })
@@ -81,6 +97,7 @@ const StackNavigatorConfig = {
 };
 const HomeTab = createStackNavigator(HomeRouteConfigs, StackNavigatorConfig);
 const NewsTab = createStackNavigator(NewsRouteConfigs, StackNavigatorConfig);
+const OrderTab = createStackNavigator(OrderRouteConfigs, StackNavigatorConfig);
 const PersonalTab = createStackNavigator(PersonalRouteConfigs, StackNavigatorConfig);
 
 // 隐藏子路由 tabBar
@@ -97,7 +114,7 @@ let setTabBar = StackNavigatorArr => {
     };
   });
 };
-setTabBar([HomeTab, NewsTab, PersonalTab]);
+setTabBar([HomeTab, NewsTab, OrderTab, PersonalTab]);
 
 // 设置tabBar
 const TabRouteConfigs = {
@@ -115,14 +132,28 @@ const TabRouteConfigs = {
       )
     })
   },
-  News: {
-    screen: NewsTab,
+  // News: {
+  //   screen: NewsTab,
+  //   navigationOptions: ({ navigation }) => ({
+  //     tabBarLabel: "新闻",
+  //     tabBarIcon: ({ tintColor, focused }) => (
+  //       <Icon
+  //         // name={focused ? "ios-paper" : "ios-paper"}
+  //         name="ios-paper"
+  //         size={26}
+  //         style={{ color: tintColor }}
+  //       />
+  //     )
+  //   })
+  // },
+  Order: {
+    screen: OrderTab,
     navigationOptions: ({ navigation }) => ({
-      tabBarLabel: "新闻",
+      tabBarLabel: "订单",
       tabBarIcon: ({ tintColor, focused }) => (
         <Icon
           // name={focused ? "ios-paper" : "ios-paper"}
-          name="ios-paper"
+          name="ios-today"
           size={26}
           style={{ color: tintColor }}
         />

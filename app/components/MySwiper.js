@@ -5,8 +5,10 @@
  * @Description:
  */
 import React, { Component } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Image, Dimensions } from "react-native";
 import Swiper from "react-native-swiper";
+
+const { width } = Dimensions.get("window");
 
 type Props = {};
 export default class MySwiper extends Component<Props> {
@@ -25,55 +27,69 @@ export default class MySwiper extends Component<Props> {
 
   // 渲染
   render() {
-    return (
-      <View style={styles.container}>
+    const { data } = this.props
+    let content, image
+    if (data) {
+      content = (
         <Swiper
           style={styles.wrapper}
           showsButtons={false}
           autoplay={true}
           removeClippedSubviews={false}
-          autoplayTimeout={2.5}
+          autoplayTimeout={5}
         >
-          <View style={[styles.slide, styles.slide1]}>
-            <Text style={styles.text}>Hello Swiper</Text>
+          {
+            data.map(item => {
+              image = item.banner
+              return (
+                <View key={item.id}>
+                  <Image source={{uri: image}} style={{ width: width, height: width * 596 / 1024 }} />
+                </View>
+              )
+            })
+          }
+        </Swiper>
+      )
+    } else {
+      content = (
+        <Swiper
+          style={styles.wrapper}
+          showsButtons={false}
+          autoplay={true}
+          removeClippedSubviews={false}
+          autoplayTimeout={5}
+        >
+          <View>
+            <Image source={ require("../../assets/images/banner_1.jpg") } style={styles.banner} />
           </View>
-          <View style={[styles.slide, styles.slide2]}>
-            <Text style={styles.text}>Beautiful</Text>
+          <View>
+            <Image source={ require("../../assets/images/banner_2.jpg") } style={styles.banner} />
           </View>
-          <View style={[styles.slide, styles.slide3]}>
-            <Text style={styles.text}>And simple</Text>
-          </View>
-          <View style={[styles.slide, styles.slide3]}>
-            <Text style={styles.text}>And simple2</Text>
+          <View>
+            <Image source={ require("../../assets/images/banner_3.jpg") } style={styles.banner} />
           </View>
         </Swiper>
+      )
+    }
+    return (
+      <View style={styles.container}>
+        { content }
       </View>
     );
+  }
+
+  componentDidMount() {
+    console.log(this.props)
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    // height: 400
+    height: width * 596 / 1002
   },
   wrapper: {},
-  slide: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  slide1: {
-    backgroundColor: "#9DD6EB"
-  },
-  slide2: {
-    backgroundColor: "#97CAE5"
-  },
-  slide3: {
-    backgroundColor: "#92BBD9"
-  },
-  text: {
-    color: "#fff",
-    fontSize: 30,
-    fontWeight: "bold"
+  banner: {
+    width: width,
+    height: width * 596 / 1002
   }
 });
