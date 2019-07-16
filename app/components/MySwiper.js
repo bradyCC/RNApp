@@ -27,8 +27,8 @@ export default class MySwiper extends Component<Props> {
 
   // 渲染
   render() {
-    const { data } = this.props
-    let content, image
+    const { data } = this.props;
+    let content, image;
     if (data) {
       content = (
         <Swiper
@@ -49,7 +49,7 @@ export default class MySwiper extends Component<Props> {
             })
           }
         </Swiper>
-      )
+      );
     } else {
       content = (
         <Swiper
@@ -69,7 +69,7 @@ export default class MySwiper extends Component<Props> {
             <Image source={ require("../../assets/images/banner_3.jpg") } style={styles.banner} />
           </View>
         </Swiper>
-      )
+      );
     }
     return (
       <View style={styles.container}>
@@ -79,17 +79,17 @@ export default class MySwiper extends Component<Props> {
   }
 
   componentDidMount() {
-    console.log(this.props)
+    console.log(this.props);
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    height: width * 596 / 1002
+    height: (width * 596) / 1002
   },
   wrapper: {},
   banner: {
     width: width,
-    height: width * 596 / 1002
+    height: (width * 596) / 1002
   }
 });
