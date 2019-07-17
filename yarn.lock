@@ -873,6 +873,11 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^12.0.9"
 
+"@react-native-community/cameraroll@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.npm.taobao.org/@react-native-community/cameraroll/download/@react-native-community/cameraroll-1.1.1.tgz#656b831c331b29c0f1f32137485310b38d2aa098"
+  integrity sha1-ZWuDHDMbKcDx8yE3SFMQs40qoJg=
+
 "@react-native-community/cli-platform-android@^2.0.1", "@react-native-community/cli-platform-android@^2.1.0":
   version "2.1.0"
   resolved "https://registry.npm.taobao.org/@react-native-community/cli-platform-android/download/@react-native-community/cli-platform-android-2.1.0.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40react-native-community%2Fcli-platform-android%2Fdownload%2F%40react-native-community%2Fcli-platform-android-2.1.0.tgz#d87ab4134d549c048e88bc0e432e8c7183fc9b9f"
@@ -5286,6 +5291,18 @@ react-native-image-crop-picker@^0.25.0:
   version "0.25.0"
   resolved "https://registry.npm.taobao.org/react-native-image-crop-picker/download/react-native-image-crop-picker-0.25.0.tgz#858fa6fdc857255fe5250252a38d58db347f9067"
   integrity sha1-hY+m/chXJV/lJQJSo41Y2zR/kGc=
+
+react-native-image-pan-zoom@^2.1.9:
+  version "2.1.11"
+  resolved "https://registry.npm.taobao.org/react-native-image-pan-zoom/download/react-native-image-pan-zoom-2.1.11.tgz#61bcb69219d95e76a9797d23e4a2e8e0bd654ae9"
+  integrity sha1-Yby2khnZXnapeX0j5KLo4L1lSuk=
+
+react-native-image-zoom-viewer@^2.2.26:
+  version "2.2.26"
+  resolved "https://registry.npm.taobao.org/react-native-image-zoom-viewer/download/react-native-image-zoom-viewer-2.2.26.tgz#c6f070abb094cfbe1b3b7d8a38ad979a5facbdc5"
+  integrity sha1-xvBwq7CUz74bO32KOK2Xml+svcU=
+  dependencies:
+    react-native-image-pan-zoom "^2.1.9"
 
 react-native-modal-popover@^0.0.12:
   version "0.0.12"
