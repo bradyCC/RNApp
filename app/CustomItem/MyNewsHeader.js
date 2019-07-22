@@ -5,7 +5,7 @@
  * @Description:
  */
 import React, { Component } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, PixelRatio } from "react-native";
 
 type Props = {};
 export default class MyNewsHeader extends Component<Props> {
@@ -26,7 +26,7 @@ export default class MyNewsHeader extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text>{this.props.title}</Text>
+        <Text style={styles.font}>{this.props.title}</Text>
       </View>
     );
   }
@@ -34,9 +34,15 @@ export default class MyNewsHeader extends Component<Props> {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
     // justifyContent: "center",
-    // alignItems: "center",
+    alignItems: "center",
     // backgroundColor: "#F5FCFF"
+    padding: 10,
+    borderBottomWidth: 1 / PixelRatio.get(),
+    borderColor: "#f00"
+  },
+  font: {
+    fontSize: 20,
+    color: "#666"
   }
 });

@@ -5,7 +5,14 @@
  * @Description:
  */
 import React, { Component } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  PixelRatio,
+  TouchableOpacity,
+  TouchableHighlight
+} from "react-native";
 
 type Props = {};
 export default class MyNewsList extends Component<Props> {
@@ -23,7 +30,7 @@ export default class MyNewsList extends Component<Props> {
   }
 
   onPress = (id, title) => {
-    this.props.navigation.navigate("HomePage", { id: id, title: title });
+    this.props.push.navigation.navigate("HomePage", { id: id, title: title });
   };
 
   // 渲染
@@ -32,10 +39,28 @@ export default class MyNewsList extends Component<Props> {
     return (
       <View style={styles.container}>
         {newsList.map(item => {
-          return <Text key={item.id}>{item.title}</Text>;
+          return (
+            <TouchableHighlight
+              underlayColor="#eee"
+              activeOpacity={0.85}
+              key={item.id}
+              onPress={() => this.onPress(item.id, item.title)}
+              style={styles.item}
+            >
+              <View>
+                <Text style={styles.font} numberOfLines={1}>
+                  {item.title}
+                </Text>
+              </View>
+            </TouchableHighlight>
+          );
         })}
       </View>
     );
+  }
+
+  componentDidMount() {
+    console.log(this.props);
   }
 }
 
@@ -43,7 +68,19 @@ const styles = StyleSheet.create({
   container: {
     // flex: 1,
     // justifyContent: "center",
-    // alignItems: "center",
-    // backgroundColor: "#F5FCFF"
+    alignItems: "center",
+    // backgroundColor: "#F5FCFF",
+    marginLeft: 10,
+    marginRight: 10
+  },
+  item: {
+    width: "100%",
+    padding: 10,
+    borderBottomWidth: 1 / PixelRatio.get(),
+    borderColor: "#dbdbdb"
+  },
+  font: {
+    fontSize: 16,
+    color: "#333"
   }
 });

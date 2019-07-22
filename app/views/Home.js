@@ -50,9 +50,15 @@ export default class Home extends Component<Props> {
         }
       ],
       newsList: [
-        { id: "1", title: "新闻标题1" },
-        { id: "2", title: "新闻标题2" },
-        { id: "3", title: "新闻标题3" }
+        {
+          id: "1",
+          title:
+            "习近平举行仪式欢迎阿联酋阿布扎比王储访华 习近平举行仪式欢迎阿联酋阿布扎比王储访华"
+        },
+        { id: "2", title: "一线城市楼市退烧 有房源一叶跌价160万" },
+        { id: "3", title: "上海市民称墓地太贵买不起 买房存骨灰" },
+        { id: "4", title: "朝鲜再发视频：摧毁青瓦台 一切化作灰烬" },
+        { id: "5", title: "生活大爆炸人物原型都好牛逼" }
       ]
     };
   }
@@ -72,7 +78,7 @@ export default class Home extends Component<Props> {
         </View>
         <MyClassifyNavigation />
         <MyNewsHeader title="新闻资讯" />
-        <MyNewsList data={this.state.newsList} />
+        <MyNewsList data={this.state.newsList} push={this.props} />
       </View>
     );
   }
@@ -80,7 +86,8 @@ export default class Home extends Component<Props> {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    backgroundColor: "#F5FCFF"
   },
   swiper: {
     alignItems: "center"

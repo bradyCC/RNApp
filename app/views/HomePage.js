@@ -28,7 +28,8 @@ export default class HomePageScreen extends Component<Props> {
     return (
       <View style={styles.container}>
         <Text>HomePage</Text>
-        <Text>{params.content}</Text>
+        <Text>ID：{params.id}</Text>
+        <Text>标题：{params.title}</Text>
       </View>
     );
   }
