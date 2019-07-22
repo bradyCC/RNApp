@@ -23,9 +23,18 @@ export default class MyImageViewer extends Component<Props> {
     // 初始状态
     this.state = {
       images: [
-        { url: "https://cn.bing.com/th?id=OIP.vsrnlCMd88K-OirYnvIjeQHaEo&pid=Api&rs=1" },
-        { url: "https://cn.bing.com/th?id=OIP.gM9i-R0G_TwRPVjEQ42X4wHaEK&pid=Api&rs=1" },
-        { url: "https://cn.bing.com/th?id=OIP.U4tT_jYeb2WgDsbGuddhOgHaE8&pid=Api&rs=1" },
+        {
+          url:
+            "https://cn.bing.com/th?id=OIP.vsrnlCMd88K-OirYnvIjeQHaEo&pid=Api&rs=1"
+        },
+        {
+          url:
+            "https://cn.bing.com/th?id=OIP.gM9i-R0G_TwRPVjEQ42X4wHaEK&pid=Api&rs=1"
+        },
+        {
+          url:
+            "https://cn.bing.com/th?id=OIP.U4tT_jYeb2WgDsbGuddhOgHaE8&pid=Api&rs=1"
+        },
       ],
       currentImage: 0,
       flag: false

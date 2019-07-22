@@ -24,7 +24,7 @@ export default class OrderDetail extends Component<Props> {
 
   // 渲染
   render() {
-    const { params } = this.props.navigation.state
+    const { params } = this.props.navigation.state;
     return (
       <View style={styles.container}>
         <Text>订单ID：{params.id}</Text>

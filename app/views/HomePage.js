@@ -24,7 +24,7 @@ export default class HomePageScreen extends Component<Props> {
 
   // 渲染
   render() {
-    const { params }= this.props.navigation.state;
+    const { params } = this.props.navigation.state;
     return (
       <View style={styles.container}>
         <Text>HomePage</Text>

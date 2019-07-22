@@ -38,16 +38,17 @@ export default class MySwiper extends Component<Props> {
           removeClippedSubviews={false}
           autoplayTimeout={5}
         >
-          {
-            data.map(item => {
-              image = item.banner
-              return (
-                <View key={item.id}>
-                  <Image source={{uri: image}} style={{ width: width, height: width * 596 / 1024 }} />
-                </View>
-              )
-            })
-          }
+          {data.map(item => {
+            image = item.banner;
+            return (
+              <View key={item.id}>
+                <Image
+                  source={{ uri: image }}
+                  style={{ width: width, height: (width * 596) / 1024 }}
+                />
+              </View>
+            );
+          })}
         </Swiper>
       );
     } else {
@@ -60,22 +61,27 @@ export default class MySwiper extends Component<Props> {
           autoplayTimeout={5}
         >
           <View>
-            <Image source={ require("../../assets/images/banner_1.jpg") } style={styles.banner} />
+            <Image
+              source={require('../../assets/images/banner_1.jpg')}
+              style={styles.banner}
+            />
           </View>
           <View>
-            <Image source={ require("../../assets/images/banner_2.jpg") } style={styles.banner} />
+            <Image
+              source={require('../../assets/images/banner_2.jpg')}
+              style={styles.banner}
+            />
           </View>
           <View>
-            <Image source={ require("../../assets/images/banner_3.jpg") } style={styles.banner} />
+            <Image
+              source={require('../../assets/images/banner_3.jpg')}
+              style={styles.banner}
+            />
           </View>
         </Swiper>
       );
     }
-    return (
-      <View style={styles.container}>
-        { content }
-      </View>
-    );
+    return <View style={styles.container}>{content}</View>;
   }
 
   componentDidMount() {

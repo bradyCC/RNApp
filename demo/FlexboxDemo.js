@@ -21,10 +21,32 @@ const FlexboxDemo = () => {
         {/* 5. order 用户设置排序 */}
         {/* 6. alignSelf 用于单独设置对齐方式 */}
         <View style={styles.view}>
-          <Text style={{ backgroundColor: "red", flex: 1, height: 60 }}>Demo1</Text>
-          <Text style={{ backgroundColor: "blue", flex: 1, height: 50 }}>Demo2</Text>
-          <Text style={{ backgroundColor: "green", flex: 1, height: 40, alignSelf: 'flex-end' }}>Demo3</Text>
-          <Text style={{ backgroundColor: "yellow", flex: 1, height: 30, alignSelf: 'flex-start' }}>Demo4</Text>
+          <Text style={{ backgroundColor: "red", flex: 1, height: 60 }}>
+            Demo1
+          </Text>
+          <Text style={{ backgroundColor: "blue", flex: 1, height: 50 }}>
+            Demo2
+          </Text>
+          <Text
+            style={{
+              backgroundColor: "green",
+              flex: 1,
+              height: 40,
+              alignSelf: "flex-end"
+            }}
+          >
+            Demo3
+          </Text>
+          <Text
+            style={{
+              backgroundColor: "yellow",
+              flex: 1,
+              height: 30,
+              alignSelf: "flex-start"
+            }}
+          >
+            Demo4
+          </Text>
         </View>
       </View>
     </Fragment>
@@ -33,10 +55,7 @@ const FlexboxDemo = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    // justifyContent: "center",
-    // alignItems: "center",
-    // backgroundColor: "#ccc"
+    flex: 1
   },
   view: {
     marginTop: 10,

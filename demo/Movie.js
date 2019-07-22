@@ -7,7 +7,8 @@
 import React, { Fragment, Component } from "react";
 import { StyleSheet, View, Text, FlatList, Image } from "react-native";
 
-let REQUEST_URL = `https://raw.githubusercontent.com/facebook/react-native/0.51-stable/docs/MoviesExample.json`;
+let REQUEST_URL =
+  "https://raw.githubusercontent.com/facebook/react-native/0.51-stable/docs/MoviesExample.json";
 
 type Props = {};
 export default class Movie extends Component<Props> {
@@ -49,7 +50,10 @@ export default class Movie extends Component<Props> {
   movieList = item => {
     return (
       <View style={styles.container}>
-        <Image source={{ uri: item.posters.thumbnail }} style={styles.thumbnail} />
+        <Image
+          source={{ uri: item.posters.thumbnail }}
+          style={styles.thumbnail}
+        />
         <View style={styles.rightContainer}>
           <Text style={styles.title}>{item.title}</Text>
           <Text style={styles.year}>{item.year}</Text>
@@ -60,10 +64,17 @@ export default class Movie extends Component<Props> {
 
   // 渲染
   render() {
-    if (!this.state.loaded) return this.loadingView();
+    if (!this.state.loaded) {
+      return this.loadingView();
+    }
     return (
       <Fragment>
-        <FlatList data={this.state.data} renderItem={({item}) => this.movieList(item)} keyExtractor={item => item.id} style={styles.list} />
+        <FlatList
+          data={this.state.data}
+          renderItem={({ item }) => this.movieList(item)}
+          keyExtractor={item => item.id}
+          style={styles.list}
+        />
       </Fragment>
     );
   }

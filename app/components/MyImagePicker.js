@@ -21,7 +21,7 @@ export default class MyImagePicker extends Component<Props> {
     super(props);
     // 初始状态
     this.state = {
-      image: ``
+      image: ""
     };
   }
 
@@ -70,20 +70,18 @@ export default class MyImagePicker extends Component<Props> {
         </View>
       );
     } else {
-      image = (
-        <Text style={styles.text}>请选择图片</Text>
-      )
+      image = <Text style={styles.text}>请选择图片</Text>;
     }
     return (
       <View style={styles.contianer}>
         <Button
           title="select from camera"
-          onPress={ () => this.selectFromCamera() }
+          onPress={() => this.selectFromCamera()}
         />
         {image}
         <Button
           title="select from galley"
-          onPress={ () => this.selectFromGalley() }
+          onPress={() => this.selectFromGalley()}
         />
       </View>
     );

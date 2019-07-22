@@ -20,7 +20,7 @@ export default class TouchableDemo extends Component<Props> {
     super(props);
     // 初始状态
     this.state = {
-      title: `TouchableOpacity`
+      title: "TouchableOpacity"
     };
   }
 
@@ -36,7 +36,13 @@ export default class TouchableDemo extends Component<Props> {
       <View style={styles.container}>
         {/* Touchable 触摸组件用法 */}
         {/* activeOpacity: 设置透明度 */}
-        <TouchableOpacity activeOpacity={0.5} onPress={() => this.activeEvent("点击")} onPressIn={() => this.activeEvent("按下")} onPressOut={() => this.activeEvent("抬起")} onLongPress={() => this.activeEvent("长按")}>
+        <TouchableOpacity
+          activeOpacity={0.5}
+          onPress={() => this.activeEvent("点击")}
+          onPressIn={() => this.activeEvent("按下")}
+          onPressOut={() => this.activeEvent("抬起")}
+          onLongPress={() => this.activeEvent("长按")}
+        >
           <Text style={styles.text}>我是文本，但可以点击</Text>
         </TouchableOpacity>
         <Text>{this.state.title}</Text>

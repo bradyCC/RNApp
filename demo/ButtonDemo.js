@@ -14,7 +14,11 @@ const ButtonDemo = () => {
     <Fragment>
       {/* Button 按钮组件用法 */}
       <View style={styles.container}>
-        <Button title="点我!" onPress={ () => Alert.alert('你点击了按钮!')} color=""></Button>
+        <Button
+          title="点我!"
+          onPress={() => Alert.alert("你点击了按钮!")}
+          color=""
+        />
       </View>
     </Fragment>
   );

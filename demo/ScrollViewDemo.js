@@ -32,16 +32,26 @@ export default class ScrollViewDemo extends Component<Props> {
         {/* showsHorizontalScrollIndicator: 设置水平滚动条 */}
         {/* pagingEnabled: 设置水平分页 */}
         {/* scrollEnabled: 设置内容滚动 */}
-        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} pagingEnabled={true} scrollEnabled={true}>
-          {
-            this.state.colors.map((item, index) => {
-              return (
-                <View key={index} style={{backgroundColor: this.state.colors[index], width: 480, height: 200}}>
-                  <Text>{item}</Text>
-                </View>
-              )
-            })
-          }
+        <ScrollView
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          pagingEnabled={true}
+          scrollEnabled={true}
+        >
+          {this.state.colors.map((item, index) => {
+            return (
+              <View
+                key={index}
+                style={{
+                  backgroundColor: this.state.colors[index],
+                  width: 480,
+                  height: 200,
+                }}
+              >
+                <Text>{item}</Text>
+              </View>
+            );
+          })}
         </ScrollView>
       </Fragment>
     );

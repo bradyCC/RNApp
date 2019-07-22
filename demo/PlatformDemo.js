@@ -5,7 +5,7 @@
  *  Description:
  */
 import React, { Component } from "react";
-import { Platform, StyleSheet, View, Text} from "react-native";
+import { Platform, StyleSheet, View, Text } from "react-native";
 
 type Props = {};
 export default class PlatformDemo extends Component<Props> {

@@ -98,7 +98,10 @@ const StackNavigatorConfig = {
 const HomeTab = createStackNavigator(HomeRouteConfigs, StackNavigatorConfig);
 const NewsTab = createStackNavigator(NewsRouteConfigs, StackNavigatorConfig);
 const OrderTab = createStackNavigator(OrderRouteConfigs, StackNavigatorConfig);
-const PersonalTab = createStackNavigator(PersonalRouteConfigs, StackNavigatorConfig);
+const PersonalTab = createStackNavigator(
+  PersonalRouteConfigs,
+  StackNavigatorConfig
+);
 
 // 隐藏子路由 tabBar
 let setTabBar = StackNavigatorArr => {

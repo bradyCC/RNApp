@@ -31,7 +31,16 @@ export default class SectionListDemo extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <SectionList sections={this.state.data} renderItem={({item}) => <Text style={[styles.content,styles.text]}>{item}</Text>} renderSectionHeader={({section}) => <Text style={[styles.header,styles.text]}>{section.title}</Text>} keyExtractor={(item, index) => index}></SectionList>
+        <SectionList
+          sections={this.state.data}
+          renderItem={({ item }) => (
+            <Text style={[styles.content, styles.text]}>{item}</Text>
+          )}
+          renderSectionHeader={({ section }) => (
+            <Text style={[styles.header, styles.text]}>{section.title}</Text>
+          )}
+          keyExtractor={(item, index) => index}
+        />
       </View>
     );
   }

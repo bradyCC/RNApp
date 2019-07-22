@@ -6,7 +6,7 @@
  */
 
 import React, { Fragment, Component } from "react";
-import {Platform, SafeAreaView, StyleSheet, View} from "react-native";
+import { Platform, SafeAreaView, StyleSheet, View } from "react-native";
 import AppNavigator from "./AppNavigator";
 
 import Dimensions from "./Dimensions";
@@ -37,10 +37,8 @@ export default class DemoApp extends Component {
         {/*<ImageDemo />*/}
         {/*<TextInputDemo />*/}
       </Fragment>
-    )
+    );
   }
 }
 
-const styles = StyleSheet.create({
-
-})
+const styles = StyleSheet.create({});

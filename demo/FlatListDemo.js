@@ -40,7 +40,17 @@ export default class FlatListDemo extends Component<Props> {
         {/* 3. keyExtractor={(item, index) => index} 设置key */}
         {/* 4. data 数据列表 */}
         {/* 5. renderItem 渲染组件 */}
-        <FlatList data={this.state.data} renderItem={({item}) => <Text key={item.id} style={{backgroundColor: item.color, width: 480, height: 200}}>{item.content}</Text>}></FlatList>
+        <FlatList
+          data={this.state.data}
+          renderItem={({ item }) => (
+            <Text
+              key={item.id}
+              style={{ backgroundColor: item.color, width: 480, height: 200 }}
+            >
+              {item.content}
+            </Text>
+          )}
+        />
       </View>
     );
   }

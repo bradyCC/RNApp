@@ -11,7 +11,7 @@ type Props = {};
 export default class LifeCycleDemo extends Component<Props> {
   // 默认属性
   static defaultProps = {
-    name: `Brady`,
+    name: "Brady",
     age: 33
   };
 
@@ -23,13 +23,13 @@ export default class LifeCycleDemo extends Component<Props> {
     super(props);
     // 初始状态
     this.state = {
-      person: `张三`
+      person: "张三"
     };
   }
 
   handleUpdate = () => {
     this.setState({
-      person: `李四`
+      person: "李四"
     });
   };
 

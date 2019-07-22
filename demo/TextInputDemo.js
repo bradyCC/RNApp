@@ -16,7 +16,7 @@ export default class TextInputDemo extends Component<Props> {
     super(props);
     // 初始状态
     this.state = {
-      phone: ``
+      phone: ""
     };
   }
 
@@ -27,8 +27,16 @@ export default class TextInputDemo extends Component<Props> {
         {/* 1. editable 用于设置是否禁用 */}
         {/* 2. keyboardType 用于设置弹出小键盘类型 */}
         {/* 3. onChangeText 用于内容变化时调用，等同于 React.js 中的 onChange */}
-        <TextInput placeholder="请输入手机号" keyboardType="numeric" onChangeText={ (phone) => this.setState({ phone }) } />
-        <Button title="点我!" onPress={ () => Alert.alert('你点击了按钮!')} color=""></Button>
+        <TextInput
+          placeholder="请输入手机号"
+          keyboardType="numeric"
+          onChangeText={phone => this.setState({ phone })}
+        />
+        <Button
+          title="点我!"
+          onPress={() => Alert.alert("你点击了按钮!")}
+          color=""
+        />
       </View>
     );
   }

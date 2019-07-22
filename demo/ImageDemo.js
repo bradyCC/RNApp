@@ -30,12 +30,32 @@ export default class ImageDemo extends Component<Props> {
     // 初始状态
     this.state = {
       data: [
-        { icon: 'http://pic26.nipic.com/20130114/3831645_182708514000_2.jpg', title: '单肩包' },
-        { icon: 'https://img.alicdn.com/imgextra/i4/i3/12525030960771327/T1IDFfFx8aXXXXXXXX_!!0-item_pic.jpg', title: '链条包' },
-        { icon: 'http://pic15.nipic.com/20110723/7938151_142822223170_2.jpg', title: '钱包' },
-        { icon: 'https://img.alicdn.com/imgextra/i4/i3/T1vsSRFz0cXXXXXXXX_!!0-item_pic.jpg', title: '手提包' },
-        { icon: 'http://pic16.nipic.com/20110908/8305881_172626754147_2.jpg', title: '双肩包' },
-        { icon: 'http://pic15.nipic.com/20110617/2889686_112512200417_2.jpg', title: '斜跨包' }
+        {
+          icon: "http://pic26.nipic.com/20130114/3831645_182708514000_2.jpg",
+          title: "单肩包"
+        },
+        {
+          icon:
+            "https://img.alicdn.com/imgextra/i4/i3/12525030960771327/T1IDFfFx8aXXXXXXXX_!!0-item_pic.jpg",
+          title: "链条包"
+        },
+        {
+          icon: "http://pic15.nipic.com/20110723/7938151_142822223170_2.jpg",
+          title: "钱包"
+        },
+        {
+          icon:
+            "https://img.alicdn.com/imgextra/i4/i3/T1vsSRFz0cXXXXXXXX_!!0-item_pic.jpg",
+          title: "手提包"
+        },
+        {
+          icon: "http://pic16.nipic.com/20110908/8305881_172626754147_2.jpg",
+          title: "双肩包"
+        },
+        {
+          icon: "http://pic15.nipic.com/20110617/2889686_112512200417_2.jpg",
+          title: "斜跨包"
+        }
       ]
     };
   }
@@ -46,18 +66,17 @@ export default class ImageDemo extends Component<Props> {
       <View style={styles.container}>
         {/* Image 图片组件用法 */}
         {/* 1. 引入本地图片, 使用 source={ require(./images/logo.png)} */}
-        {/* 2. 引入网络图片或引入base64图片, 使用 source={{ uri: "https://n.sinaimg.cn/ent/transform/20160105/9KBy-fxneefs5557039.png" }} */},
+        {/* 2. 引入网络图片或引入base64图片, 使用 source={{ uri: "https://n.sinaimg.cn/ent/transform/20160105/9KBy-fxneefs5557039.png" }} */}
+        ,
         {/* 注：1. ios 中只支持 https 协议的图片; 2. 使用 uri 引入图片时, 必须设置宽、高 */}
-          {
-            this.state.data.map((item, index)=> {
-              return (
-                <View style={ styles.imageView } key={index}>
-                  <Image source={{ uri: item.icon }} style={ styles.image} />
-                  <Text>{ item.title }</Text>
-                </View>
-              )
-            })
-          }
+        {this.state.data.map((item, index) => {
+          return (
+            <View style={styles.imageView} key={index}>
+              <Image source={{ uri: item.icon }} style={styles.image} />
+              <Text>{item.title}</Text>
+            </View>
+          );
+        })}
       </View>
     );
   }
