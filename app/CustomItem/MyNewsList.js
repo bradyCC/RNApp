@@ -1,14 +1,14 @@
 /**
  * @Author: brady
- * @Date: 2019/7/10
- * @Last Created time: 16:22:43
+ * @Date: 2019/7/22
+ * @Last Created time: 14:30:18
  * @Description:
  */
 import React, { Component } from "react";
 import { StyleSheet, View, Text } from "react-native";
 
 type Props = {};
-export default class HomePageScreen extends Component<Props> {
+export default class MyNewsList extends Component<Props> {
   // 默认属性
   static defaultProps = {};
 
@@ -22,27 +22,28 @@ export default class HomePageScreen extends Component<Props> {
     this.state = {};
   }
 
+  onPress = (id, title) => {
+    this.props.navigation.navigate("HomePage", { id: id, title: title });
+  };
+
   // 渲染
   render() {
-    const { params } = this.props.navigation.state;
+    const newsList = this.props.data;
     return (
       <View style={styles.container}>
-        <Text>HomePage</Text>
-        <Text>{params.content}</Text>
+        {newsList.map(item => {
+          return <Text key={item.id}>{item.title}</Text>;
+        })}
       </View>
     );
-  }
-
-  componentDidMount() {
-    console.log(this.props);
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F5FCFF"
+    // flex: 1,
+    // justifyContent: "center",
+    // alignItems: "center",
+    // backgroundColor: "#F5FCFF"
   }
 });

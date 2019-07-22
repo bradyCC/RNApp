@@ -62,19 +62,19 @@ export default class MySwiper extends Component<Props> {
         >
           <View>
             <Image
-              source={require('../../assets/images/banner_1.jpg')}
+              source={require("../../assets/images/banner_1.jpg")}
               style={styles.banner}
             />
           </View>
           <View>
             <Image
-              source={require('../../assets/images/banner_2.jpg')}
+              source={require("../../assets/images/banner_2.jpg")}
               style={styles.banner}
             />
           </View>
           <View>
             <Image
-              source={require('../../assets/images/banner_3.jpg')}
+              source={require("../../assets/images/banner_3.jpg")}
               style={styles.banner}
             />
           </View>

@@ -6,8 +6,12 @@
  */
 import React, { Component } from "react";
 import { StyleSheet, View, Text } from "react-native";
-import MySwiper from "../components/MySwiper";
 import Icon from "react-native-vector-icons/Ionicons";
+
+import MySwiper from "../components/MySwiper";
+import MyClassifyNavigation from "../CustomItem/MyClassifyNavigation";
+import MyNewsHeader from "../CustomItem/MyNewsHeader";
+import MyNewsList from "../CustomItem/MyNewsList";
 
 type Props = {};
 export default class Home extends Component<Props> {
@@ -44,6 +48,11 @@ export default class Home extends Component<Props> {
           width: "782",
           height: "405"
         }
+      ],
+      newsList: [
+        { id: "1", title: "新闻标题1" },
+        { id: "2", title: "新闻标题2" },
+        { id: "3", title: "新闻标题3" }
       ]
     };
   }
@@ -52,13 +61,18 @@ export default class Home extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        {/* 轮播图 */}
-        <MySwiper data={this.state.data} />
-        {/* 选择城市 */}
-        <View style={styles.cityView}>
-          <Text style={styles.cityText}>北京</Text>
-          <Icon name="ios-arrow-down" size={14} style={styles.arrow} />
+        <View style={styles.swiper}>
+          {/* 轮播图 */}
+          <MySwiper data={this.state.data} />
+          {/* 选择城市 */}
+          <View style={styles.cityView}>
+            <Text style={styles.cityText}>北京</Text>
+            <Icon name="ios-arrow-down" size={14} style={styles.arrow} />
+          </View>
         </View>
+        <MyClassifyNavigation />
+        <MyNewsHeader title="新闻资讯" />
+        <MyNewsList data={this.state.newsList} />
       </View>
     );
   }
@@ -66,6 +80,9 @@ export default class Home extends Component<Props> {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1
+  },
+  swiper: {
     alignItems: "center"
   },
   cityView: {

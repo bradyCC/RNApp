@@ -8,6 +8,7 @@
 import React, { Fragment, Component } from "react";
 import { Platform, SafeAreaView, StyleSheet, View } from "react-native";
 import AppNavigator from "./AppNavigator";
+import SplashScreen from "react-native-splash-screen";
 
 import Dimensions from "./Dimensions";
 import FlexboxDemo from "./FlexboxDemo";
@@ -38,6 +39,10 @@ export default class DemoApp extends Component {
         {/*<TextInputDemo />*/}
       </Fragment>
     );
+  }
+
+  componentDidMount() {
+    SplashScreen.hide();
   }
 }
 

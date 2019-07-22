@@ -32,6 +32,10 @@ export default class NewsDetail extends Component<Props> {
       </View>
     );
   }
+
+  componentDidMount() {
+    console.log(this.props.navigation);
+  }
 }
 
 const styles = StyleSheet.create({

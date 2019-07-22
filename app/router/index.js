@@ -135,34 +135,34 @@ const TabRouteConfigs = {
       )
     })
   },
-  // News: {
-  //   screen: NewsTab,
-  //   navigationOptions: ({ navigation }) => ({
-  //     tabBarLabel: "新闻",
-  //     tabBarIcon: ({ tintColor, focused }) => (
-  //       <Icon
-  //         // name={focused ? "ios-paper" : "ios-paper"}
-  //         name="ios-paper"
-  //         size={26}
-  //         style={{ color: tintColor }}
-  //       />
-  //     )
-  //   })
-  // },
-  Order: {
-    screen: OrderTab,
+  News: {
+    screen: NewsTab,
     navigationOptions: ({ navigation }) => ({
-      tabBarLabel: "订单",
+      tabBarLabel: "新闻",
       tabBarIcon: ({ tintColor, focused }) => (
         <Icon
           // name={focused ? "ios-paper" : "ios-paper"}
-          name="ios-today"
+          name="ios-paper"
           size={26}
           style={{ color: tintColor }}
         />
       )
     })
   },
+  // Order: {
+  //   screen: OrderTab,
+  //   navigationOptions: ({ navigation }) => ({
+  //     tabBarLabel: "订单",
+  //     tabBarIcon: ({ tintColor, focused }) => (
+  //       <Icon
+  //         // name={focused ? "ios-paper" : "ios-paper"}
+  //         name="ios-today"
+  //         size={26}
+  //         style={{ color: tintColor }}
+  //       />
+  //     )
+  //   })
+  // },
   Personal: {
     screen: PersonalTab,
     navigationOptions: ({ navigation }) => ({
