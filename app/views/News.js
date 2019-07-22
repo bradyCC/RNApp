@@ -127,7 +127,7 @@ export default class News extends Component<Props> {
                 onPress={() => this.onPress(item.id, item.title)}
               >
                 <View style={styles.view}>
-                  <Image source={{ uri: item.url }} style={styles.image} />
+                  <Image source={{ uri: item.url }} style={styles.image} resizeMode="contain" />
                   <Text style={styles.title}>{item.title}</Text>
                 </View>
               </TouchableOpacity>

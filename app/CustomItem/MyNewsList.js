@@ -11,7 +11,8 @@ import {
   Text,
   PixelRatio,
   TouchableOpacity,
-  TouchableHighlight
+  TouchableHighlight,
+  Alert
 } from "react-native";
 
 type Props = {};
