@@ -9,6 +9,7 @@ import { StyleSheet, View, Text, Button } from "react-native";
 import MyImagePicker from "../components/MyImagePicker";
 import MyImageViewer from "../components/MyImageViewer";
 
+
 type Props = {};
 export default class Personal extends Component<Props> {
   // 默认属性
