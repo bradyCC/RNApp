@@ -5,7 +5,7 @@
  * @Description:
  */
 import React, { Component } from "react";
-import { StyleSheet, View, Text, Picker } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 
 import MySwiper from "../components/MySwiper";
@@ -13,6 +13,7 @@ import MyClassifyNavigation from "../CustomItem/MyClassifyNavigation";
 import MyNewsHeader from "../CustomItem/MyNewsHeader";
 import MyNewsList from "../CustomItem/MyNewsList";
 import MyPicker from "../CustomItem/MyPicker";
+import MyProgressBar from "../CustomItem/MyProgressBar";
 
 type Props = {};
 export default class Home extends Component<Props> {
@@ -78,9 +79,10 @@ export default class Home extends Component<Props> {
           </View>
         </View>
         <MyClassifyNavigation />
-        <MyNewsHeader title="新闻资讯" />
-        <MyNewsList data={this.state.newsList} push={this.props} />
-        <MyPicker />
+        {/*<MyNewsHeader title="新闻资讯" />*/}
+        {/*<MyNewsList data={this.state.newsList} push={this.props} />*/}
+        {/*<MyPicker />*/}
+        {/*<MyProgressBar />*/}
       </View>
     );
   }
