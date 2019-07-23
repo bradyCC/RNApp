@@ -20,7 +20,7 @@ export default class MyPicker extends Component<Props> {
     super(props);
     // 初始状态
     this.state = {
-      language: "java" // 默认值，主分支master
+      language: "java" // 默认值
     };
   }
 
