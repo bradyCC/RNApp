@@ -5,7 +5,7 @@
  * @Description:
  */
 import React, { Component } from "react";
-import { StyleSheet, View, Text, Picker, PickerIOS } from "react-native";
+import { StyleSheet, View, Picker, PickerIOS, Platform } from "react-native";
 
 type Props = {};
 export default class MyPicker extends Component<Props> {
@@ -20,22 +20,41 @@ export default class MyPicker extends Component<Props> {
     super(props);
     // 初始状态
     this.state = {
-      language: "java"
+      language: "java" // 默认值，主分支master
     };
   }
 
   // 渲染
   render() {
+    const Content = Platform.select({
+      ios: () => {
+        return (
+          <PickerIOS
+            selectedValue={this.state.language}
+            onValueChange={item => this.setState({ language: item })}
+            itemStyle={styles.picker}
+          >
+            <PickerIOS.Item label="Java" value="java" />
+            <PickerIOS.Item label="JavaScript" value="js" />
+          </PickerIOS>
+        );
+      },
+      android: () => {
+        return (
+          <Picker
+            selectedValue={this.state.language}
+            onValueChange={item => this.setState({ language: item })}
+            itemStyle={styles.picker}
+          >
+            <Picker.Item label="Java" value="java" />
+            <Picker.Item label="JavaScript" value="js" />
+          </Picker>
+        );
+      }
+    });
     return (
       <View style={styles.contianer}>
-        <PickerIOS
-          selectedValue={this.state.language}
-          onValueChange={item => this.setState({ language: item })}
-          itemStyle={styles.picker}
-        >
-          <PickerIOS.Item label="Java" value="java" />
-          <PickerIOS.Item label="JavaScript" value="js" />
-        </PickerIOS>
+        <Content />
       </View>
     );
   }
