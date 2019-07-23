@@ -5,9 +5,13 @@
  * @Description:
  */
 import React, { Component } from "react";
-import { StyleSheet, View, Text, Button } from "react-native";
+import { StyleSheet, View, Text, Button, Dimensions } from "react-native";
+import { WebView } from "react-native-webview";
+
 import MyImagePicker from "../components/MyImagePicker";
 import MyImageViewer from "../components/MyImageViewer";
+
+const { width, height } = Dimensions.get("window");
 
 type Props = {};
 export default class Personal extends Component<Props> {
@@ -28,6 +32,10 @@ export default class Personal extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
+        <WebView
+          style={{ width: width, height: height }}
+          source={{ uri: "https://facebook.github.io/react-native/" }}
+        />
         <Text>Peronal</Text>
         <Button
           title="Go to PersonalInfo"
