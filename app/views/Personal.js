@@ -35,6 +35,7 @@ export default class Personal extends Component<Props> {
         <WebView
           style={{ width: width, height: height }}
           source={{ uri: "https://facebook.github.io/react-native/" }}
+          // source={{ html: "<h1>Hello World</h1>" }}
         />
         <Text>Peronal</Text>
         <Button
