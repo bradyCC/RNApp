@@ -2,8 +2,6 @@ package com.rnapp;
 
 import android.content.Context;
 import android.widget.Toast;
-import android.content.Intent;
-import android.app.Activity;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
@@ -25,9 +23,5 @@ public class MyNativeModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void rnCallNative(String msg) {
     Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
-
-    Intent intent = new Intent(mContext, MyActivity.class);
-    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-    mContext.startActivity(intent);
   }
 }
