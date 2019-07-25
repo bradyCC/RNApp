@@ -5,7 +5,7 @@
  * @Description:
  */
 import React, { Component } from "react";
-import { StyleSheet, View, Text, Button, Alert, NativeModules } from "react-native";
+import { StyleSheet, View, Text, Button, NativeModules } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 
 import MySwiper from "../components/MySwiper";
@@ -14,6 +14,7 @@ import MyNewsHeader from "../CustomItem/MyNewsHeader";
 import MyNewsList from "../CustomItem/MyNewsList";
 import MyPicker from "../CustomItem/MyPicker";
 import MyProgressBar from "../CustomItem/MyProgressBar";
+import MyScrollableTabView from "../components/MyScrollableTabView";
 
 type Props = {};
 export default class Home extends Component<Props> {
@@ -67,28 +68,28 @@ export default class Home extends Component<Props> {
 
   callButton = () => {
     NativeModules.MyNativeModule.rnCallNative("调用原生方法成功！");
-    // Alert.alert("123");
   };
 
   // 渲染
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.swiper}>
-          {/* 轮播图 */}
-          <MySwiper data={this.state.data} />
-          {/* 选择城市 */}
-          <View style={styles.cityView}>
-            <Text style={styles.cityText}>北京</Text>
-            <Icon name="ios-arrow-down" size={14} style={styles.arrow} />
-          </View>
-        </View>
-        <MyClassifyNavigation />
-        <MyNewsHeader title="新闻资讯" />
-        <MyNewsList data={this.state.newsList} push={this.props} />
+        {/*<View style={styles.swiper}>*/}
+        {/*  /!* 轮播图 *!/*/}
+        {/*  <MySwiper data={this.state.data} />*/}
+        {/*  /!* 选择城市 *!/*/}
+        {/*  <View style={styles.cityView}>*/}
+        {/*    <Text style={styles.cityText}>北京</Text>*/}
+        {/*    <Icon name="ios-arrow-down" size={14} style={styles.arrow} />*/}
+        {/*  </View>*/}
+        {/*</View>*/}
+        {/*<MyClassifyNavigation />*/}
+        {/*<MyNewsHeader title="新闻资讯" />*/}
+        {/*<MyNewsList data={this.state.newsList} push={this.props} />*/}
         {/*<MyPicker />*/}
         {/*<MyProgressBar />*/}
-        <Button title="调用RN原生方法" onPress={() => this.callButton()} />
+        {/*<Button title="调用RN原生方法" onPress={() => this.callButton()} />*/}
+        <MyScrollableTabView />
       </View>
     );
   }

@@ -23,8 +23,10 @@ public class MyNativeModule extends ReactContextBaseJavaModule {
 
   @ReactMethod
   public void rnCallNative(String msg) {
+    // RN调用Android原生模块方法
     Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
 
+    // RN调用Android原生页面
     Intent intent = new Intent(mContext, MyActivity.class);
     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     mContext.startActivity(intent);
