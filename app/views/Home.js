@@ -5,7 +5,7 @@
  * @Description:
  */
 import React, { Component } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, Button, Alert, NativeModules } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 
 import MySwiper from "../components/MySwiper";
@@ -65,6 +65,11 @@ export default class Home extends Component<Props> {
     };
   }
 
+  callButton = () => {
+    NativeModules.MyNativeModule.rnCallNative("调用原生方法成功！");
+    // Alert.alert("123");
+  };
+
   // 渲染
   render() {
     return (
@@ -79,10 +84,11 @@ export default class Home extends Component<Props> {
           </View>
         </View>
         <MyClassifyNavigation />
-        {/*<MyNewsHeader title="新闻资讯" />*/}
-        {/*<MyNewsList data={this.state.newsList} push={this.props} />*/}
+        <MyNewsHeader title="新闻资讯" />
+        <MyNewsList data={this.state.newsList} push={this.props} />
         {/*<MyPicker />*/}
         {/*<MyProgressBar />*/}
+        <Button title="调用RN原生方法" onPress={() => this.callButton()} />
       </View>
     );
   }
