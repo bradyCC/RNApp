@@ -16,6 +16,7 @@ import MyPicker from "../CustomItem/MyPicker";
 import MyProgressBar from "../CustomItem/MyProgressBar";
 import MyScrollableTabView from "../components/MyScrollableTabView";
 import MyBottomScrollableTabView from "../components/MyBottomScrollableTabView";
+import MyFileOperate from "../components/MyFileOperate";
 
 type Props = {};
 export default class Home extends Component<Props> {
@@ -75,16 +76,16 @@ export default class Home extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.swiper}>
-          {/* 轮播图 */}
-          <MySwiper data={this.state.data} />
-          {/* 选择城市 */}
-          <View style={styles.cityView}>
-            <Text style={styles.cityText}>北京</Text>
-            <Icon name="ios-arrow-down" size={14} style={styles.arrow} />
-          </View>
-        </View>
-        <MyClassifyNavigation />
+        {/*<View style={styles.swiper}>*/}
+        {/*  /!* 轮播图 *!/*/}
+        {/*  <MySwiper data={this.state.data} />*/}
+        {/*  /!* 选择城市 *!/*/}
+        {/*  <View style={styles.cityView}>*/}
+        {/*    <Text style={styles.cityText}>北京</Text>*/}
+        {/*    <Icon name="ios-arrow-down" size={14} style={styles.arrow} />*/}
+        {/*  </View>*/}
+        {/*</View>*/}
+        {/*<MyClassifyNavigation />*/}
         {/*<MyNewsHeader title="新闻资讯" />*/}
         {/*<MyNewsList data={this.state.newsList} push={this.props} />*/}
         {/*<MyPicker />*/}
@@ -92,6 +93,7 @@ export default class Home extends Component<Props> {
         {/*<Button title="调用RN原生方法" onPress={() => this.callButton()} />*/}
         {/*<MyScrollableTabView />*/}
         {/*<MyBottomScrollableTabView />*/}
+        <MyFileOperate />
       </View>
     );
   }

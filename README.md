@@ -69,6 +69,8 @@ IOS:
 + netinfo 网络状态组件
 + react-native-camera 相机组件
 + react-native-geolocation-service 定位服务组件
++ react-native-scrollable-tab-view 分页导航栏组件
++ react-native-fs 文件操作组件
 
 ## API
 
