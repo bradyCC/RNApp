@@ -42,22 +42,81 @@
 2. ios
 + xcode 运行
 
-## 使用react-navigation 配置导航
-1. 安装
-yarn add react-navigation
-yarn add react-native-gesture-handler
-yarn add jetifier --dev （react-native 0.60.0 暂不兼容 react-native-gesture-handler）
+## 内置组件
+公共组件：
++
 
-2. 在package.json中配置 "scripts": { "postinstall": "npx jetify" }
+Android:
++ ViewPagerAndorid 引导页组件
++ Picker 下拉框选择器组件
++ ProgressBarAndroid 进度条组件
++ BackHandler 监听后退按钮组件
 
-3. 执行 yarn 执行 npx jetify
+IOS:
++ PickerIOS 选择器组件
++ ProgressViewIOS 进度条组件
++ DatePickerIOS 日期/时间选择器组件
 
-4. 使用方法
+## 第三方组件库
++ react-navigation 导航组件
++ react-native-vector-icons 字体图标组件
++ react-native-swiper 轮播图组件
++ react-native-splash-screen 启动页组件
++ react-native-image-crop-picker 图片选择组件
++ react-native-image-zoom-viewer 图片预览组件
++ react-native-webview 原生WebView组件
++ async-storage 持久化存储组件
++ netinfo 网络状态组件
++ react-native-camera 相机组件
++ react-native-geolocation-service 定位服务组件
 
-## 使用react-native-vector-icons 字体图标
+## API
 
-## 使用react-native-swiper 实现轮播图
 
-## 使用react-native-splash-screen 实现启动页
+## package.json
+```json
+{
+  "name": "RNApp",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint .",
+    "postinstall": "npx jetify"
+  },
+  "dependencies": {
+    "@ant-design/react-native": "^3.1.9",
+    "@react-native-community/async-storage": "^1.5.1",
+    "@react-native-community/cameraroll": "^1.1.1",
+    "lodash": "^4.17.11",
+    "react": "16.8.6",
+    "react-native": "0.60.0",
+    "react-native-gesture-handler": "^1.3.0",
+    "react-native-image-crop-picker": "^0.25.0",
+    "react-native-image-zoom-viewer": "^2.2.26",
+    "react-native-splash-screen": "^3.2.0",
+    "react-native-swiper": "^1.6.0-nightly.2",
+    "react-native-vector-icons": "^6.6.0",
+    "react-native-webview": "^6.3.1",
+    "react-navigation": "^3.11.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.0",
+    "@babel/runtime": "^7.5.0",
+    "@react-native-community/eslint-config": "^0.0.5",
+    "babel-jest": "^24.8.0",
+    "babel-plugin-import": "^1.12.0",
+    "eslint": "^6.0.1",
+    "jest": "^24.8.0",
+    "jetifier": "^1.6.1",
+    "metro-react-native-babel-preset": "^0.55.0",
+    "react-test-renderer": "16.8.6"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
 
-## 使用react-native-image-crop-picker 图像选择器
+```
+
