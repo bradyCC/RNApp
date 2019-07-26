@@ -5,7 +5,7 @@
  * @Description:
  */
 import React, { Component } from "react";
-import { StyleSheet, View, Text, Button, NativeModules } from "react-native";
+import { StyleSheet, View, Text, Button, NativeModules, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 
 import MySwiper from "../components/MySwiper";
@@ -19,6 +19,7 @@ import MyBottomScrollableTabView from "../components/MyBottomScrollableTabView";
 import MyFileOperate from "../components/MyFileOperate";
 import MyModal from "../CustomItem/MyModal";
 import MyLinking from "../components/MyLinking";
+import MyRedux from "../CustomItem/MyRedux";
 
 type Props = {};
 export default class Home extends Component<Props> {
@@ -75,7 +76,6 @@ export default class Home extends Component<Props> {
     NativeModules.MyNativeModule.rnCallNative("调用原生方法成功！");
   };
 
-
   // 渲染
   render() {
     return (
@@ -99,7 +99,8 @@ export default class Home extends Component<Props> {
         {/*<MyBottomScrollableTabView />*/}
         {/*<MyFileOperate />*/}
         {/*<MyModal />*/}
-        <MyLinking />
+        {/*<MyLinking />*/}
+        <MyRedux />
       </View>
     );
   }
