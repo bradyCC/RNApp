@@ -13,7 +13,7 @@ let downloadUrl = "http://www.reactnative.vip/img/reactnative.png";
 let downloadUrl_big_file = "http://www.reactnative.vip/data/dongfang.apk";
 let jobId1 = -1;
 let jobId2 = -1;
-let testImagePath = `${RNFS.PicturesDirectoryPath}/test-image-1.png`;
+let testImagePath = `${RNFS.PicturesDirectoryPath}/test-image-2.png`;
 let path = `${RNFS.DocumentDirectoryPath}/test.txt`;
 
 type Props = {};
@@ -62,7 +62,8 @@ export default class MyFileOperate extends Component<Props> {
   };
 
   createFile = () => {
-    RNFS.writeFile(path, "Lorem ipsum dolor sit amet", "utf8")
+    RNFS.writeFile(testImagePath, "", "")
+    // RNFS.writeFile(path, "Lorem ipsum dolor sit amet", "utf8")
       .then(success => {
         console.log("FILE WRITTEN!");
       })
@@ -73,7 +74,8 @@ export default class MyFileOperate extends Component<Props> {
 
   deleteFile = () => {
     return (
-      RNFS.unlink(path)
+      RNFS.unlink(testImagePath)
+      // RNFS.unlink(path)
       .then(() => {
         console.log('FILE DELETED');
       })
@@ -117,11 +119,14 @@ export default class MyFileOperate extends Component<Props> {
   };
 
   stopDownLoad = () => {
-
+    RNFS.stopDownload(jobId1);
   };
 
   getFileInfo = () => {
-
+    return RNFS.getFSInfo().then(info => {
+      console.log(info)
+      this.setState({output: JSON.stringify(info)})
+    })
   };
 
   uploadFile = () => {
@@ -141,7 +146,7 @@ export default class MyFileOperate extends Component<Props> {
         <Text style={{ fontSize: 20 }} onPress={() => this.createFile()}>创建文件</Text>
         <Text style={{ fontSize: 20 }} onPress={() => this.deleteFile()}>删除文件</Text>
         <Text style={{ fontSize: 20 }} onPress={() => this.printPath()}>输出各种路径</Text>
-        <Text style={{ fontSize: 20 }} onPress={() => this.downLoadFile(true, downloadUrl)}>下载文件</Text>
+        <Text style={{ fontSize: 20 }} onPress={() => this.downLoadFile(true, downloadUrl_big_file)}>下载文件</Text>
         <Text style={{ fontSize: 20 }} onPress={() => this.stopDownLoad()}>停止下载</Text>
         <Text style={{ fontSize: 20 }} onPress={() => this.getFileInfo()}>获取文件大小信息</Text>
         <Text style={{ fontSize: 20 }} onPress={() => this.uploadFile()}>上传文件IOS</Text>
