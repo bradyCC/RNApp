@@ -122,3 +122,7 @@ IOS:
 
 ```
 
+
+备注：
+adb shell input keyevent 82
+

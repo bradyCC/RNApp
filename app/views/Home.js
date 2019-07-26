@@ -17,6 +17,7 @@ import MyProgressBar from "../CustomItem/MyProgressBar";
 import MyScrollableTabView from "../components/MyScrollableTabView";
 import MyBottomScrollableTabView from "../components/MyBottomScrollableTabView";
 import MyFileOperate from "../components/MyFileOperate";
+import MyModal from "../CustomItem/MyModal";
 
 type Props = {};
 export default class Home extends Component<Props> {
@@ -93,7 +94,8 @@ export default class Home extends Component<Props> {
         {/*<Button title="调用RN原生方法" onPress={() => this.callButton()} />*/}
         {/*<MyScrollableTabView />*/}
         {/*<MyBottomScrollableTabView />*/}
-        <MyFileOperate />
+        {/*<MyFileOperate />*/}
+        <MyModal />
       </View>
     );
   }
