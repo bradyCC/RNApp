@@ -18,6 +18,7 @@ import MyScrollableTabView from "../components/MyScrollableTabView";
 import MyBottomScrollableTabView from "../components/MyBottomScrollableTabView";
 import MyFileOperate from "../components/MyFileOperate";
 import MyModal from "../CustomItem/MyModal";
+import MyLinking from "../components/MyLinking";
 
 type Props = {};
 export default class Home extends Component<Props> {
@@ -69,9 +70,11 @@ export default class Home extends Component<Props> {
     };
   }
 
+  // RN调用Android原生模块方法
   callButton = () => {
     NativeModules.MyNativeModule.rnCallNative("调用原生方法成功！");
   };
+
 
   // 渲染
   render() {
@@ -95,7 +98,8 @@ export default class Home extends Component<Props> {
         {/*<MyScrollableTabView />*/}
         {/*<MyBottomScrollableTabView />*/}
         {/*<MyFileOperate />*/}
-        <MyModal />
+        {/*<MyModal />*/}
+        <MyLinking />
       </View>
     );
   }
