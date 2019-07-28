@@ -2,7 +2,7 @@
 
 ## 项目初始化
 1. 安装：npm i -g react-native-cli
-2. 项目初始化：ract-native init 项目名称
+2. 项目初始化：react-native init 项目名称
 
 ## 环境搭建
 1. android
